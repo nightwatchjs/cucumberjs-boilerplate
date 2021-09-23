@@ -1,7 +1,7 @@
 # cucumber-nightwatch-boilerplate
 
 [Nigthwatch](https://nightwatchjs.org) is a popular open-source test automation framework.
-Cucumber is the one of the popular tools that supports Behaviour Driver Development (BDD). This project shows the usage of built-in Cucumber plugin to run Nightwatch end-to-end Test.
+Cucumber is the one of the popular tools that supports Behaviour Driven Development (BDD). The Cucumber built-in plugin of Nightwatch is bringing the ease of writing test scripts to BDD. 
 
 ### Overview
 The test case in Cucumber are written as scenarios in simple language which then maps to code. This project shows some examples of Nightwatch end-to-end test written using Cucumber. 
