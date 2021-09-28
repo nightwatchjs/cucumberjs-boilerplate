@@ -5,7 +5,7 @@ const Services = {}; loadServices();
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
-  src_folders: ['src/specs/nightwatch.js', 'src/specs/google.js'],
+  src_folders: ['src/specs'],
 
   // See https://nightwatchjs.org/guide/working-with-page-objects/
   page_objects_path: 'src/pages',
@@ -26,7 +26,7 @@ module.exports = {
   test_runner: {
     type: 'cucumber',
     options: {
-      feature_path: 'src/features/*.feature'
+      feature_path: 'tests/features/*.feature'
     }
    
   },
