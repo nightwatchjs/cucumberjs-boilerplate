@@ -13,10 +13,20 @@ The test case in Cucumber are written as scenarios in simple language which then
 - run the tests `npm test`
 
 
+### Adding tests
+- There are predefined cucumber steps using nightwatch commands in `src/specs`. 
+- Add a feature file in `tests/features` using predefined steps and [Gherkin syntax](https://cucumber.io/docs/gherkin/).
+- There are some example tests in the folder to demonstrate.
+- Run your tests using `npm test`
+- You can also use tags to filter out tests to run `Eg: npm test -- --tags @nightwatch`.
+
+
 ### Configuration 
 Most of the cucumber options are picked through nightwatch config in order to decrease the effort while writing scripts. 
 - feature path can be given as a string or an Array in the test runner options. All formats of feature path mentioned in [Cucumber CLI](https://github.com/cucumber/cucumber-js/blob/main/docs/cli.md#running-specific-features) are supported.
 - parallel option can be also supplied as a test-runner option for cucumber. (no need to specify `thread_workers`)
+- You can use [Cucumber tag expression](https://cucumber.io/docs/cucumber/api/#tag-expressions) to filter out scenarios to run. `Eg: nightwatch --tags "@nightwatch and @cucumber"`
+- You provide in env flag in order to run test againts multiple envs(chrome, browserstack, etc). `Eg: nightwatch --env chrome,firefox`
 - Example:
 ```
  test_runner: {
