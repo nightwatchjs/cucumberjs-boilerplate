@@ -188,6 +188,14 @@ var nightwatchCommands = {
 
   },
 
+  checkURLContain(negativeCase, expectedUrl) {
+    if (negativeCase) {
+      return browser.expect.url().to.not.contain(expectedUrl);
+    } else {
+      return browser.expect.url().to.contain(expectedUrl);
+    }
+  },
+
   checkIsEnabled(selector, negativeCase) {
     if (negativeCase) {
       return browser.expect.element(selector).to.not.be.enabled;

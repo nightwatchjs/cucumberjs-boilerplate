@@ -21,6 +21,8 @@ Then(/^I expect that (button|element|container) "([^"]*)?"( not)* contains the t
 
 Then(/^I expect that the url is( not)* "([^"]*)?"$/, nightwatch.checkURL);
 
+Then(/^I expect the url to( not)* contain "([^"]*)?"$/, nightwatch.checkURLContain);
+
 Then(/^I expect that the( css)* attribute "([^"]*)?" from element "([^"]*)?" is( not)* "([^"]*)?"$/, nightwatch.checkProperty);
 
 Then(/^I expect that checkbox "([^"]*)?" is( not)* checked$/, nightwatch.checkSelected);
