@@ -118,17 +118,19 @@ var nightwatchCommands = {
   isDisplayed(selector, negativeCase) {
     if (negativeCase) {
       return browser.expect.element(selector).to.not.be.visible;
-    } else {
-      return browser.expect.element(selector).to.be.visible;
     }
+ 
+    return browser.expect.element(selector).to.be.visible;
+    
   },
 
   checkElementPresent(selector, negativeCase) {
     if (negativeCase) {
       return browser.expect.element(selector).to.not.be.present;
-    } else {
-      return browser.expect.element(selector).to.be.present;
     }
+ 
+    return browser.expect.element(selector).to.be.present;
+    
   },
 
   checkClass(selector, negativeCase, expectedClass) {
@@ -142,66 +144,74 @@ var nightwatchCommands = {
   checkCookieContent(name, negativeCase, expectedValue) {
     if (negativeCase) {
       return browser.expect.cookie(name).to.not.contain(expectedValue);
-    } else {
-      return browser.expect.cookie(name).to.contain(expectedValue);
     }
+ 
+    return browser.expect.cookie(name).to.contain(expectedValue);
+    
   },
 
   checkActive(selector, negativeCase) {
     if (negativeCase) {
       return browser.expect.element(selector).to.not.be.active; 
-    } else {
-      return browser.expect.element(selector).to.be.visible;
     }
+ 
+    return browser.expect.element(selector).to.be.visible;
+    
   },
 
   checkSelected(selector, negativeCase) {
     if (negativeCase) {
       return browser.expect.element(selector).to.not.be.selected;
-    } else {
-      return browser.expect.element(selector).to.be.selected;
     }
+ 
+    return browser.expect.element(selector).to.be.selected;
+    
   },
 
   checkTitle(negativeCase, expectedTitle) {
     if (negativeCase) {
       return browser.expect.title().to.not.equal(expectedTitle);
-    } else {
-      return browser.expect.title().to.equal(expectedTitle);
     }
+
+    return browser.expect.title().to.equal(expectedTitle);
+    
   },
 
   checkTitleContains(negativeCase, expectedTitle) {
     if (negativeCase) {
       return browser.expect.title().to.not.contain(expectedTitle);
-    } else {
-      return browser.expect.title().to.contain(expectedTitle);
     }
+ 
+    return browser.expect.title().to.contain(expectedTitle);
+    
   },
 
   checkURL(negativeCase, expectedUrl) {
     if (negativeCase) {
       return browser.expect.url().to.not.equal(expectedUrl);
-    } else {
-      return browser.expect.url().to.equal(expectedUrl);
     }
+ 
+    return browser.expect.url().to.equal(expectedUrl);
+    
 
   },
 
   checkURLContain(negativeCase, expectedUrl) {
     if (negativeCase) {
       return browser.expect.url().to.not.contain(expectedUrl);
-    } else {
-      return browser.expect.url().to.contain(expectedUrl);
     }
+ 
+    return browser.expect.url().to.contain(expectedUrl);
+    
   },
 
   checkIsEnabled(selector, negativeCase) {
     if (negativeCase) {
       return browser.expect.element(selector).to.not.be.enabled;
-    } else {
-      return browser.expect.element(selector).to.be.enabled;
     }
+
+    return browser.expect.element(selector).to.be.enabled;
+    
 
   },
 
@@ -245,11 +255,12 @@ var nightwatchCommands = {
       return isCss 
         ? browser.expect.element(selector).to.not.have.css(attrName).which.equals(expectedValue)
         : browser.expect.element(selector).to.not.have.css(attrName).which.equals(expectedValue);
-    } else {
-      return isCss 
-        ? browser.expect.element(selector).to.have.css(attrName).which.equals(expectedValue)
-        : browser.expect.element(selector).to.have.css(attrName).which.equals(expectedValue);
     }
+
+    return isCss 
+      ? browser.expect.element(selector).to.have.css(attrName).which.equals(expectedValue)
+      : browser.expect.element(selector).to.have.css(attrName).which.equals(expectedValue);
+    
 
   }
 };
