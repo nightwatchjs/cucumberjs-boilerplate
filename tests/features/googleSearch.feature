@@ -1,4 +1,7 @@
 Feature: Google Search
+    I want to search for nightwatch on google and check if the results contain Nightwatch.js
+
+    
 Background: Background name
   Given I open the url "https://google.com"
   Then I expect that the title is "Google"

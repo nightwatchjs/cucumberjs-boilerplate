@@ -26,7 +26,8 @@ module.exports = {
   test_runner: {
     type: 'cucumber',
     options: {
-      feature_path: 'tests/features/*.feature'
+      feature_path: 'tests/features/*.feature',
+      additional_config: ''
     }
    
   },
@@ -96,7 +97,7 @@ module.exports = {
           // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
           //
           // This tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
-          w3c: false,
+          w3c: true,
           args: [
             //'--no-sandbox',
             //'--ignore-certificate-errors',
