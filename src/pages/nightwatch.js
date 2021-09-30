@@ -117,27 +117,27 @@ var nightwatchCommands = {
 
   isDisplayed(selector, negativeCase) {
     if (negativeCase) {
-      return browser.expect.element(selector).to.not.be.visible;
+      return browser.assert.not.visible(selector);
     }
  
-    return browser.expect.element(selector).to.be.visible;
+    return browser.assert.visible(selector);
     
   },
 
   checkElementPresent(selector, negativeCase) {
     if (negativeCase) {
-      return browser.expect.element(selector).to.not.be.present;
+      return browser.assert.not.elementPresent(selector);
     }
  
-    return browser.expect.element(selector).to.be.present;
+    return browser.assert.elementPresent(selector);
     
   },
 
   checkClass(selector, negativeCase, expectedClass) {
     if (negativeCase) {
-      return browser.expect.element(selector).to.not.have.property('className').contain(expectedClass);
+      return browser.assert.not.cssClassPresent(selector, expectedClass);
     } else {
-      return browser.expect.element(selector).to.have.property('className').contain(expectedClass);
+      return browser.assert.cssClassPresent(selector, expectedClass);
     }
   },
   
@@ -160,58 +160,48 @@ var nightwatchCommands = {
   },
 
   checkSelected(selector, negativeCase) {
-    if (negativeCase) {
-      return browser.expect.element(selector).to.not.be.selected;
+    if (negativeCase) {     
+      return browser.assert.not.selected(selector);
     }
  
-    return browser.expect.element(selector).to.be.selected;
+    return browser.assert.selected(selector);
     
   },
 
   checkTitle(negativeCase, expectedTitle) {
     if (negativeCase) {
-      return browser.expect.title().to.not.equal(expectedTitle);
+      return browser.assert.not.title(expectedTitle);
     }
 
-    return browser.expect.title().to.equal(expectedTitle);
-    
-  },
-
-  checkTitleContains(negativeCase, expectedTitle) {
-    if (negativeCase) {
-      return browser.expect.title().to.not.contain(expectedTitle);
-    }
- 
-    return browser.expect.title().to.contain(expectedTitle);
+    return browser.assert.title(expectedTitle);
     
   },
 
   checkURL(negativeCase, expectedUrl) {
     if (negativeCase) {
-      return browser.expect.url().to.not.equal(expectedUrl);
+      return browser.assert.urlEquals(expectedUrl);
     }
  
-    return browser.expect.url().to.equal(expectedUrl);
+    return browser.assert.not.urlContains(expectedUrl);
     
 
   },
 
   checkURLContain(negativeCase, expectedUrl) {
     if (negativeCase) {
-      return browser.expect.url().to.not.contain(expectedUrl);
+      return browser.assert.not.urlContains(expectedUrl);
     }
  
-    return browser.expect.url().to.contain(expectedUrl);
+    return browser.assert.urlContains(expectedUrl);
     
   },
 
   checkIsEnabled(selector, negativeCase) {
     if (negativeCase) {
-      return browser.expect.element(selector).to.not.be.enabled;
+      return browser.assert.not.enabled(selector);
     }
 
-    return browser.expect.element(selector).to.be.enabled;
-    
+    return browser.assert.enabled(selector);
 
   },
 
@@ -224,42 +214,26 @@ var nightwatchCommands = {
       
     if (negativeCase) {
       command ==='getValue' 
-        ? await browser.expect.element(selector).to.not.have.property('value').contain(expectedText)
-        : await browser.expect.element(selector).text.to.not.contain(expectedText);
+        ? await browser.assert.not.valueContains(selector, expectedText)
+        : await browser.assert.not.containsText(selector, expectedText);
     } else {
       command ==='getValue' 
-        ? await browser.expect.element(selector).to.have.property('value').contain(expectedText)
-        : await browser.expect.element(selector).text.to.contain(expectedText);
+        ? await browser.assert.valueContains(selector, expectedText)
+        : await browser.assert.containsText(selector, expectedText);
     }
   },
 
-  async checkEqualsText(elementType, selector, negativeCase, expectedText) {
-    let command = 'getValue';
-    if (['container', 'button'].includes(elementType) || (await browser.getElementProperty(selector, 'value')) === null) {
-      command = 'getText';
-    }
-      
-    if (negativeCase) {
-      command ==='getValue' 
-        ? await browser.expect.element(selector).to.not.have.property('value').equals(expectedText)
-        : await browser.expect.element(selector).text.to.not.equals(expectedText);
-    } else {
-      command ==='getValue' 
-        ? await browser.expect.element(selector).to.have.property('value').equals(expectedText)
-        : await browser.expect.element(selector).text.to.eqauls(expectedText);
-    }
-  },
-
+  
   checkProperty(isCss, attrName, selector, negativeCase, expectedValue) { 
     if (negativeCase) {
       return isCss 
-        ? browser.expect.element(selector).to.not.have.css(attrName).which.equals(expectedValue)
-        : browser.expect.element(selector).to.not.have.css(attrName).which.equals(expectedValue);
+        ? browser.assert.not.cssProperty(selector, attrName, expectedValue)
+        : browser.assert.not.domProperty(selector, attrName, expectedValue);
     }
 
     return isCss 
-      ? browser.expect.element(selector).to.have.css(attrName).which.equals(expectedValue)
-      : browser.expect.element(selector).to.have.css(attrName).which.equals(expectedValue);
+      ? browser.assert.cssProperty(selector, attrName, expectedValue)
+      : browser.assert.domProperty(selector, attrName, expectedValue);
     
 
   }

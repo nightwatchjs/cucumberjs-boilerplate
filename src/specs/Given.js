@@ -35,11 +35,6 @@ Given(
 
 
 Given(
-  /^the (button|element) "([^"]*)?"( not)* matches the text "([^"]*)?"$/,
-  nightwatch.checkEqualsText
-);
-
-Given(
   /^the (button|element|container) "([^"]*)?"( not)* contains the text "([^"]*)?"$/,
   nightwatch.checkContainsText
 );

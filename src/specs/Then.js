@@ -15,8 +15,6 @@ Then(/^I expect that element "([^"]*)?" is( not)* present$/, nightwatch.checkEle
 
 Then(/^I expect that element "([^"]*)?" becomes displayed$/, nightwatch.waitForVisible);
 
-Then(/^I expect that (button|element) "([^"]*)?"( not)* matches the text "([^"]*)?"$/, nightwatch.checkEqualsText);
-
 Then(/^I expect that (button|element|container) "([^"]*)?"( not)* contains the text "([^"]*)?"$/, nightwatch.checkContainsText);
 
 Then(/^I expect that the url is( not)* "([^"]*)?"$/, nightwatch.checkURL);
