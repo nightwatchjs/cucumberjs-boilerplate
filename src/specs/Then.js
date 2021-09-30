@@ -7,8 +7,6 @@ Then(/^I expect that element "([^"]*)?" (has|does not have) the class "([^"]*)?"
 
 Then(/^I expect that the title is( not)* "([^"]*)?"$/, nightwatch.checkTitle);
 
-Then(/^I expect that the title( not)* contains "([^"]*)?"$/, nightwatch.checkTitleContains);
-
 Then(/^I expect that element "([^"]*)?" is( not)* displayed$/, nightwatch.isDisplayed);
 
 Then(/^I expect that element "([^"]*)?" is( not)* present$/, nightwatch.checkElementPresent);
