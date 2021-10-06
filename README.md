@@ -23,10 +23,33 @@ The test case in Cucumber are written as scenarios in simple language which then
 
 ### Configuration 
 Most of the cucumber options are picked through nightwatch config in order to decrease the effort while writing scripts. 
+
 - feature path can be given as a string or an Array in the test runner options. All formats of feature path mentioned in [Cucumber CLI](https://github.com/cucumber/cucumber-js/blob/main/docs/cli.md#running-specific-features) are supported.
-- parallel option can be also supplied as a test-runner option for cucumber. (no need to specify `thread_workers`)
+
+- Cucumber spec files/step definition files can be provided in `src_folders` in Nightwatch config or as a CLI argument.
+ - With `src_folders` defined:
+
+```sh
+$ npx nightwatch 
+```
+
+ - Without `src_folders` defined:
+
+```sh
+$ npx nightwatch examples/cucumberJs/features/step_definitions 
+```
+- parallel option can be also supplied as a test-runner option for cucumber. 
+
+ - Parallel running using 2 workers:
+
+```sh
+$ npx nightwatch examples/cucumberJs/features/step_definitions --parallel 2 
+```
+
 - You can use [Cucumber tag expression](https://cucumber.io/docs/cucumber/api/#tag-expressions) to filter out scenarios to run. `Eg: nightwatch --tags "@nightwatch and @cucumber"`
+
 - You provide in env flag in order to run test againts multiple envs(chrome, browserstack, etc). `Eg: nightwatch --env chrome,firefox`
+
 - Example:
 ```
  test_runner: {
