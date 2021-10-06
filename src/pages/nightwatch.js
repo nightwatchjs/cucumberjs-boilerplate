@@ -91,8 +91,8 @@ var nightwatchCommands = {
       const actions = this.actions({async: true});
 
       return actions
-        .keyDown(Key[key])
-        .keyUp(Key[key]);
+        .keyDown(Keys[key])
+        .keyUp(Keys[key]);
     });
   },
 
