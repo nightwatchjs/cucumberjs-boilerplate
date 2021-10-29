@@ -8,7 +8,7 @@ module.exports = {
   src_folders: ['src/specs'],
 
   // See https://nightwatchjs.org/guide/working-with-page-objects/
-  page_objects_path: 'src/pages',
+  page_objects_path: '',
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
   custom_commands_path: '',
@@ -27,7 +27,8 @@ module.exports = {
     type: 'cucumber',
     options: {
       feature_path: 'tests/features/*.feature',
-      additional_config: ''
+      additional_config: '',
+      parallel: 2
     }
    
   },
