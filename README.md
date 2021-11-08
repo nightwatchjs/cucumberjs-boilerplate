@@ -3,17 +3,17 @@
 [Nigthwatch](https://nightwatchjs.org) is a popular open-source test automation framework.
 Cucumber is the one of the popular tools that supports Behaviour Driven Development (BDD). The Cucumber built-in plugin of Nightwatch is bringing the ease of writing test scripts to BDD. 
 
-### Overview
+## Overview
 The test case in Cucumber are written as scenarios in simple language which then maps to code. This project shows some examples of Nightwatch end-to-end test written using Cucumber. 
 
-### Setup 
+## Setup 
 - To run the tests in the repository
 - clone the repository: `git clone https://github.com/gravityvi/cucumber-nightwatch-boilerplate.git`
 - install the required dependencies `npm install`
 - run the tests `npm test`
 
 
-### Adding tests
+## Usage
 - There are predefined cucumber steps using nightwatch commands in `src/specs`. 
 - Add a feature file in `tests/features` using predefined steps and [Gherkin syntax](https://cucumber.io/docs/gherkin/).
 - There are some example tests in the folder to demonstrate.
@@ -21,7 +21,11 @@ The test case in Cucumber are written as scenarios in simple language which then
 - You can also use tags to filter out tests to run `Eg: npm test -- --tags @nightwatch`.
 
 
-### Configuration 
+## Adding Tests
+You can write tests in Gherkin syntax using the predefined steps from the boilerplate. There are examples under `tests/features`to demonstrate this. You can also extend this boilerplate by defining new steps under `src/specs` to suite your usecase.
+
+
+## Configuration 
 Most of the cucumber options are picked through nightwatch config in order to decrease the effort while writing scripts. 
 
 - feature path can be given as a string or an Array in the test runner options. All formats of feature path mentioned in [Cucumber CLI](https://github.com/cucumber/cucumber-js/blob/main/docs/cli.md#running-specific-features) are supported.
@@ -61,5 +65,10 @@ $ npx nightwatch examples/cucumberJs/features/step_definitions --parallel 2
   },
 ```
 
+- You can also use an extra setup file that can be passed as an extra `--require` to Nightwatch, which will be forwarded to Cucumber.
+```sh
+$ nightwatch examples/cucumber-js/features/step_definitions --require {/full/path/to/_extra_setup.js}
+```
 
+- Nightwatch will also forward `--format` and `--format-options` CLI arguements, if present, to Cucumber.
 
