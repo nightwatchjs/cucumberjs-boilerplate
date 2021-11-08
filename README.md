@@ -72,7 +72,7 @@ $ npx nightwatch examples/cucumberJs/features/step_definitions --parallel 2
 
 - You can also use an extra setup file that can be passed as an extra `--require` to Nightwatch, which will be forwarded to Cucumber.
 ```sh
-$ nightwatch examples/cucumber-js/features/step_definitions --require {/full/path/to/_extra_setup.js}
+$ nightwatch src/specs --require {/full/path/to/_extra_setup.js}
 ```
 
 - Nightwatch will also forward `--format` and `--format-options` CLI arguements, if present, to Cucumber.
