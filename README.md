@@ -47,7 +47,7 @@ $ npx nightwatch
 ```sh
 $ npx nightwatch examples/cucumberJs/features/step_definitions 
 ```
-- parallel option can be also supplied as a test-runner option for cucumber. 
+- parallel option can also be supplied as a test-runner option for cucumber. 
 
  - Parallel running using 2 workers:
 
@@ -59,7 +59,7 @@ $ npx nightwatch examples/cucumberJs/features/step_definitions --parallel 2
 
 - You provide in env flag in order to run test againts multiple envs(chrome, browserstack, etc). `Eg: nightwatch --env chrome,firefox`
 
-- Example:
+- Test runner config inside `nightwatch.conf.js`:
 ```
  test_runner: {
     type: 'cucumber',
