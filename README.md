@@ -13,12 +13,17 @@ The test case in Cucumber are written as scenarios in simple language which then
 - run the tests `npm test`
 
 
+
 ## Usage
 - There are predefined cucumber steps using nightwatch commands in `src/specs`. 
 - Add a feature file in `tests/features` using predefined steps and [Gherkin syntax](https://cucumber.io/docs/gherkin/).
 - There are some example tests in the folder to demonstrate.
 - Run your tests using `npm test`
 - You can also use tags to filter out tests to run `Eg: npm test -- --tags @nightwatch`.
+
+
+## Demo
+![Nightwatch Schematics Demo](.github/assets/demo-terminal.gif)
 
 
 ## Adding Tests
