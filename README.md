@@ -99,7 +99,7 @@ $ npx nightwatch src/specs --headless
 ## FAQ
 
 ### How to pass in extra capabilities based on scenarios?
-By deafault Nightwatch uses scenario Name as test name to update more capabilities we can set `auto_start_session` to `false` in the configuration in order to prevent automatic start of the webdriver session after Nightwatch is intantiated. Nightwatch provides the instance available as `this.client`, which contains `launchBrowser()` and `updateCapabilities` method.
+By deafault Nightwatch uses scenario name as test name. To update more capabilities we can set `auto_start_session` to `false` in the configuration in order to prevent automatic start of the webdriver session after Nightwatch is intantiated. Nightwatch provides the instance available as `this.client`, which contains `launchBrowser()` and `updateCapabilities` method.
 
 #### Configuration:
 ```js
