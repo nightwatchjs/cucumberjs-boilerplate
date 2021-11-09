@@ -14,8 +14,8 @@ The testcases in Cucumber are written as scenarios in plain language which then 
 
 To run the tests in the repository:
 
-1. clone the repository: 
-   `git clone https://github.com/gravityvi/cucumber-nightwatch-boilerplate.git`
+1. clone this repository: 
+   `git clone https://github.com/nightwatchjs/cucumberjs-boilerplate.git`
 2. install the required dependencies: 
    `npm install`
 3. run the tests: 
