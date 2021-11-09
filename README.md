@@ -5,38 +5,36 @@
    <img alt="Cucumber.js Schematic Logo" src=".github/assets/cucumber-logo.png" width=300 />
 </p>
 
-[Nigthwatch](https://nightwatchjs.org) is a popular open-source test automation framework.
-Cucumber is the one of the popular tools that supports Behaviour Driven Development (BDD). The Cucumber built-in plugin of Nightwatch is bringing the ease of writing test scripts to BDD. 
+[CucumberJS](https://cucumber.io/) is the one of the popular tools that supports Behaviour Driven Development (BDD). The built-in Cucumber test runner in Nightwatch is bringing the ease of writing test scripts to BDD. 
 
 ## Overview
-The test case in Cucumber are written as scenarios in simple language which then maps to code. This project shows some examples of Nightwatch end-to-end test written using Cucumber. 
+The testcases in Cucumber are written as scenarios in plain language which then maps to code. This project shows some examples of Nightwatch end-to-end tests written using Cucumber. 
 
 ## Setup 
-- To run the tests in the repository
-- clone the repository: `git clone https://github.com/gravityvi/cucumber-nightwatch-boilerplate.git`
-- install the required dependencies `npm install`
-- run the tests `npm test`
 
+To run the tests in the repository:
 
+1. clone the repository: 
+   `git clone https://github.com/gravityvi/cucumber-nightwatch-boilerplate.git`
+2. install the required dependencies: 
+   `npm install`
+3. run the tests: 
+   `npm test`
 
 ## Usage
-- There are predefined cucumber steps using nightwatch commands in `src/specs`. 
-- Add a feature file in `tests/features` using predefined steps and [Gherkin syntax](https://cucumber.io/docs/gherkin/).
-- There are some example tests in the folder to demonstrate.
-- Run your tests using `npm test`
-- You can also use tags to filter out tests to run `Eg: npm test -- --tags @nightwatch`.
-
+- there are predefined cucumber steps using nightwatch commands in `src/specs`. 
+- add a feature file in `tests/features` using predefined steps and [Gherkin syntax](https://cucumber.io/docs/gherkin/).
+- there are some example tests in the folder to demonstrate.
+- you can also use tags to filter out tests to run `Eg: npm test -- --tags @nightwatch`.
 
 ## Demo
-![Nightwatch Schematics Demo](.github/assets/demo-terminal.gif)
-
+![Nightwatch CucumberJS Demo](.github/assets/demo-terminal.gif)
 
 ## Adding Tests
 You can write tests in Gherkin syntax using the predefined steps from the boilerplate. There are examples under `tests/features`to demonstrate this. You can also extend this boilerplate by defining new steps under `src/specs` to suite your usecase.
 
-
 ## Configuration 
-Most of the cucumber options are picked through nightwatch config in order to decrease the effort while writing scripts. 
+Most of the cucumber options are picked from the Nightwatch config in order to decrease the effort while writing scripts. 
 
 ```
 {
