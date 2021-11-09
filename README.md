@@ -1,4 +1,4 @@
-# cucumber-nightwatch-boilerplate
+# Nightwatch-CucumberJS Boilerplate
 
 <p align="center">
   <img alt="Nightwatch.js Schematic Logo" src=".github/assets/nightwatch-logo.svg" width=300 />
