@@ -41,7 +41,7 @@ Then(/^I expect that (button|element|container) "([^"]*)?"( not)* contains the t
   if (['container', 'button'].includes(elementType) || (await browser.getElementProperty(selector, 'value')) === null) {
     command = 'getText';
   }
-  await browser.waitForElementVisible(selector);
+  await browser.waitForElementPresent(selector);
       
   if (negativeCase) {
     command ==='getValue' 
