@@ -1,6 +1,5 @@
 const {Then} = require('@cucumber/cucumber');
 
-
 Then(/^I expect that element "([^"]*)?" is( not)* displayed$/, function(selector, negativeCase) {
   if (negativeCase) {
     return browser.assert.not.visible(selector);
@@ -31,7 +30,6 @@ Then(/^I expect that element "([^"]*)?" is( not)* present$/, function(selector, 
   }
  
   return browser.assert.elementPresent(selector);
-    
 });
 
 Then(/^I expect that element "([^"]*)?" becomes displayed$/,  function(selector) {
@@ -125,5 +123,4 @@ Then(/^I expect that element "([^"]*)?" is( not)* focused$/, function(selector, 
   }
  
   return browser.expect.element(selector).to.be.visible;
-    
 });

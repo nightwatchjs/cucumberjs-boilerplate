@@ -7,23 +7,24 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nightwatch"
+    "test": "nightwatch",
+    "eslint": "eslint src/specs --quiet"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gravityvi/cucumber-nightwatch-boilerplate.git"
   },
   "author": "Ravi Sawlani",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gravityvi/cucumber-nightwatch-boilerplate/issues"
   },
   "homepage": "https://github.com/gravityvi/cucumber-nightwatch-boilerplate#readme",
   "dependencies": {
-    "@cucumber/cucumber": "^7.3.1",
-    "chromedriver": "^93.0.1",
-    "geckodriver": "^2.0.4",
-    "nightwatch": "^2.0.0-beta.1"
+    "@cucumber/cucumber": "^8.0.0-rc.1",
+    "chromedriver": "^96.0.0",
+    "geckodriver": "^3.0.1",
+    "nightwatch": "^2.0.0-beta.2"
   },
   "devDependencies": {
     "eslint": "^7.32.0"
