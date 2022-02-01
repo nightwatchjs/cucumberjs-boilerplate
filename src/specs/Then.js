@@ -10,18 +10,18 @@ Then(/^I expect that element "([^"]*)?" is( not)* displayed$/, function(selector
 
 Then(/^I expect that element "([^"]*)?" (has|does not have) the class "([^"]*)?"$/, function(selector, negativeCase, expectedClass) {
   if (negativeCase) {
-    return browser.assert.not.cssClassPresent(selector, expectedClass);
+    return browser.assert.not.hasClass(selector, expectedClass);
   }
 
-  return browser.assert.cssClassPresent(selector, expectedClass);
+  return browser.assert.hasClass(selector, expectedClass);
 });
 
 Then(/^I expect that the title is( not)* "([^"]*)?"$/, function(negativeCase, expectedTitle) {
   if (negativeCase) {
-    return browser.assert.not.title(expectedTitle);
+    return browser.assert.not.titleEquals(expectedTitle);
   }
   
-  return browser.assert.title(expectedTitle);
+  return browser.assert.titleEquals(expectedTitle);
 });
 
 Then(/^I expect that element "([^"]*)?" is( not)* present$/, function(selector, negativeCase) {
@@ -46,11 +46,11 @@ Then(/^I expect that (button|element|container) "([^"]*)?"( not)* contains the t
   if (negativeCase) {
     command ==='getValue' 
       ? await browser.assert.not.valueContains(selector, expectedText)
-      : await browser.assert.not.containsText(selector, expectedText);
+      : await browser.assert.not.textContains(selector, expectedText);
   } else {
     command ==='getValue' 
       ? await browser.assert.valueContains(selector, expectedText)
-      : await browser.assert.containsText(selector, expectedText);
+      : await browser.assert.textContains(selector, expectedText);
   }
 });
 

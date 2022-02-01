@@ -38,10 +38,10 @@ Given(/^the checkbox "([^"]*)?" is( not)* checked$/, function(selector, negative
 
 Given(/^the title is( not)* "([^"]*)?"$/, function(negativeCase, expectedTitle) {
   if (negativeCase) {
-    return browser.assert.not.title(expectedTitle);
+    return browser.assert.not.titleEquals(expectedTitle);
   }
 
-  return browser.assert.title(expectedTitle);
+  return browser.assert.titleEquals(expectedTitle);
 });
 
 Given(/^the (button|element|container) "([^"]*)?"( not)* contains the text "([^"]*)?"$/, async function(elementType, selector, negativeCase, expectedText) {
@@ -54,11 +54,11 @@ Given(/^the (button|element|container) "([^"]*)?"( not)* contains the text "([^"
   if (negativeCase) {
     command === 'getValue'
       ? await browser.assert.not.valueContains(selector, expectedText)
-      : await browser.assert.not.containsText(selector, expectedText);
+      : await browser.assert.not.textContains(selector, expectedText);
   } else {
     command === 'getValue'
       ? await browser.assert.valueContains(selector, expectedText)
-      : await browser.assert.containsText(selector, expectedText);
+      : await browser.assert.textContains(selector, expectedText);
   }
 });
 
