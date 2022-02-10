@@ -14,4 +14,4 @@ Scenario: search for nightwatch repository
     And   I add "nightwatch" to the inputfield "[placeholder='Search GitHub']"
     When  I press "ENTER"
     Then  I expect that element ".header-search-input" contains the text "nightwatch"
-    And   I expect that container ".repo-list-item:first-child" contains the text "End-to-end testing framework written in Node.js and using the Webdriver API"
+    And   I expect that container ".repo-list-item:first-child" contains the text "End-to-end testing framework written in Node.js and using the W3C Webdriver API"
