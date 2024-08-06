@@ -6,12 +6,12 @@ Feature: Github test
 Scenario: open URL
     Given I open the url "https://github.com/"
     Then  I expect the url to contain "github.com"
-    And   I expect that the title is "GitHub: Where the world builds software · GitHub"
+    And   I expect that the title is GitHub: Let’s build from here · GitHub"
 
+@githubSearch
 Scenario: search for nightwatch repository
     Given I open the url "https://github.com/search"
     And   I clear the inputfield "[placeholder='Search GitHub']"
     And   I add "nightwatch" to the inputfield "[placeholder='Search GitHub']"
     When  I press "ENTER"
-    Then  I expect that element ".header-search-input" contains the text "nightwatch"
-    And   I expect that container ".repo-list-item:first-child" contains the text "End-to-end testing framework written in Node.js and using the W3C Webdriver API"
+    Then  I expect that container "div[data-testid='results-list']:first-child" contains the text "end-to-end testing framework written in Node.js"
