@@ -8,7 +8,7 @@ Background: Background name
 
 @duckduckgo
 Scenario: Searching DuckDuckGo
-  When I set "nightwatchjs" to the inputfield "#search_form_input_homepage"
+  When I set "nightwatchjs" to the inputfield "input[name=q]"
   And I press "ENTER"
-  Then I expect that container "#links" contains the text "Nightwatch.js"
+  Then I expect that container "#react-layout" contains the text "Nightwatch.js"
 
