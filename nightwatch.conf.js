@@ -32,7 +32,8 @@ module.exports = {
     options: {
       feature_path: 'tests/features/*.feature',
       additional_config: '',
-      parallel: 2
+      parallel: 2,
+      require: ['./cucumber.conf.js']
     }
    
   },

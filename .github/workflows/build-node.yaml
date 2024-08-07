@@ -22,4 +22,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run eslint
-      - run: npm test -- --env chrome --headless
+      - run: npm test -- --env chrome --headless --tags "not @duckduckgo"
