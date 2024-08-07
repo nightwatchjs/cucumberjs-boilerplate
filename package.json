@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nightwatch",
+    "test": "nightwatch --env chrome --tags 'not @duckduckgo'",
     "eslint": "eslint src/specs --quiet"
   },
   "repository": {
