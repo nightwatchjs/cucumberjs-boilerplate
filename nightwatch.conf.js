@@ -1,4 +1,3 @@
-const Services = {}; loadServices();
 
 //  _   _  _         _      _                     _          _
 // | \ | |(_)       | |    | |                   | |        | |
@@ -262,14 +261,20 @@ module.exports = {
     //////////////////////////////////////////////////////////////////////////////////
     selenium_server: {
       // Selenium Server is running locally and is managed by Nightwatch
+      // Install the NPM package @nightwatch/selenium-server or download the selenium server jar file from https://github.com/SeleniumHQ/selenium/releases/, e.g.: selenium-server-4.1.1.jar
       selenium: {
         start_process: true,
         port: 4444,
-        server_path: (Services.seleniumServer ? Services.seleniumServer.path : ''),
+        server_path: '', // Leave empty if @nightwatch/selenium-server is installed
+        command: 'standalone', // Selenium 4 only
         cli_args: {
-          'webdriver.gecko.driver': (Services.geckodriver ? Services.geckodriver.path : ''),
-          'webdriver.chrome.driver': (Services.chromedriver ? Services.chromedriver.path : '')
+          //'webdriver.gecko.driver': '',
+          //'webdriver.chrome.driver': ''
         }
+      },
+      webdriver: {
+        start_process: false,
+        default_path_prefix: '/wd/hub'
       }
     },
 
@@ -298,16 +303,3 @@ module.exports = {
   }
 };
 
-function loadServices() {
-  try {
-    Services.seleniumServer = require('selenium-server');
-  } catch (err) {}
-
-  try {
-    Services.chromedriver = require('chromedriver');
-  } catch (err) {}
-
-  try {
-    Services.geckodriver = require('geckodriver');
-  } catch (err) {}
-}
